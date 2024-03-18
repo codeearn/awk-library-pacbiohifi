@@ -75,6 +75,14 @@ cat lastzalignment.txt | awk '{ print $10 }' | cut -f 1 -d "-" > length1.txt \
                                           length2.txt && paste length1.txt length2.txt \ 
                                                     | awk '{ print $2-$1 }' 
 
+# filtering the paf file according to the mention alignment score criteria (making this iteration shorter by adding a intermediate arrays which is borrowing the memory)
+cat alignment.paf | awk '{ print $10"\t"$11"\t"$12"\t"$13' } ' | awk ' { print $1 } ' \
+    awk {
+      BEGIN
+       for(i=0, i<NF; i++)
+      END
+    }
+
 # string import 
 function fold(str, sep, cols,    out, cmd, i, len, chars, c, last, f, first) {
   if (!cols) {
