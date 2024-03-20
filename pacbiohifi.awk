@@ -35,7 +35,7 @@ for i in $(cat test.cov | awk '{ print $3 }'); \
  for i in $(cat test.cov | awk '{ print $3 }'); \
                 do if [[ $i -ge "${lengthselectionsort}" ]] then; \ 
                                         echo $i; fi; done | youplot histogram
-# genome assembled following length filter and the filtered uitigs
+# genome assembled following length filter and the filtered uitigs greater than 10000
 cat test.cov | awk '$3 > 10000 { print $3 }' | gawk '{ sum += $1 }; \
                       END { print sum }' && cat test.cov | \
                                             awk '$3 > 10000 { print  $1"\t"$2"\t"$3 }'
@@ -74,7 +74,6 @@ cat lastzalignment.txt | awk '{ print $10 }' | cut -f 1 -d "-" > length1.txt \
               && cat lastzalignment.txt | awk '{ print $12 }' | cut -f 2 -d "-" > \
                                           length2.txt && paste length1.txt length2.txt \ 
                                                     | awk '{ print $2-$1 }' 
-
 # check the cordinates of the maf alignments, sample maf file is present in the repository by adding the regular pattern for the strand align 
 declare -a firstcor=()
 for i in $(cat test.maf | awk ' { print $2 }' | cut -f 1 -d "/" | grep "+$" | sed "s/+//g");
