@@ -1,5 +1,6 @@
-# awk-library-pacbiohifi
-a awk library package for the numerical reads analysis. parses the long reads and the pacbiohifi reads and the corresponding alignments. Implements both the associative and the indexed arrays. Functions include: all long read alingment parsers, all long reads graphs calculations, all simulation for the reads and many more. 
+# awk-pacbiohifi
+- a awk functions for the numerical reads analysis. parses the long reads and the pacbiohifi reads and the corresponding alignments.
+- long read alingment parsers, long reads calculations, aligned genome length, aligned genome coverage. 
 
 Gaurav Sablok \
 Academic Staff Member \
